@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>BRAC University Cultural Club</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+                
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/templatemo-festava-live.css" rel="stylesheet">
+        
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        
+        <!-- Ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        
+        <style>
+            /* SB Members Slideshow Styles */
+            @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap");
+
+            .sb-section {
+                position: relative;
+                padding: 80px 0;
+                background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/8727c9b1-be21-4932-a221-4257b59a74dd);
+                background-repeat: no-repeat;
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                animation: slidein 120s forwards infinite alternate;
+            }
+
+            @keyframes slidein {
+                0%, 100% {
+                    background-position: 20% 0%;
+                    background-size: 3400px;
+                }
+                50% {
+                    background-position: 100% 0%;
+                    background-size: 2400px;
+                }
+            }
+
+            .album-cover {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .sb-swiper {
+                width: 100%;
+                padding: 40px 0 100px;
+            }
+
+            .sb-swiper .swiper-slide {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #fff;
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+                transition: 0.3s;
+            }
+
+            .sb-swiper .swiper-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                transition: opacity 0.3s;
+                border-radius: 10px;
+            }
+
+            .sb-swiper .swiper-slide:hover .overlay {
+                opacity: 1;
+            }
+
+            .sb-swiper .swiper-slide .overlay ion-icon {
+                font-size: 3rem;
+                color: #fff;
+                transition: transform 0.3s;
+            }
+
+            .sb-swiper .swiper-slide:hover .overlay ion-icon {
+                transform: scale(1.2);
+            }
+
+            .member-name {
+                position: absolute;
+                bottom: -40px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                color: white;
+                font-size: 1.1rem;
+                font-weight: 500;
+                padding: 10px;
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 0 0 10px 10px;
+                transition: all 0.3s ease;
+            }
+
+            .sb-swiper .swiper-slide:hover .member-name {
+                bottom: 0;
+            }
+
+            .sb-section-title {
+                text-align: center;
+                color: white;
+                margin-bottom: 40px;
+                font-size: 2.5rem;
+                font-weight: 600;
+            }
+        </style>
+        
+<!--
+
+TemplateMo 583 BUCuC
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+    </head>
+    
+    <body>
+
+        <main>
+
+            <header class="site-header">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-lg-12 col-12 d-flex flex-wrap">
+                            <p class="d-flex me-4 mb-0">
+                                <i class="bi-person custom-icon me-2"></i>
+                                <strong class="text-dark">BRAC University Cultural Club </strong>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        BUCuC
+                    </a>
+
+                    <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_2">About</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_3">Panel</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_4">Sb Members</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_5">Schedule</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                            </li>
+                        </ul>
+
+                        <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Buy Ticket</a>
+                    </div>
+                </div>
+            </nav>
+            
+
+            <section class="hero-section" id="section_1">
+                <div class="section-overlay"></div>
+
+                <div class="container d-flex justify-content-center align-items-center">
+                    <div class="row">
+
+                        <div class="col-12 mt-auto mb-5 text-center">
+                            <h1 class="text-white mb-5">BRAC University Cultural Club</h1>
+                            <a class="btn custom-btn smoothscroll" href="#section_2">Let's begin</a>
+                        </div>
+
+                        <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                            <div class="date-wrap">
+                                <h5 class="text-white">
+                                    <i class="custom-icon bi-geo-alt me-2"></i>
+                                    BRAC University Cultural Club
+                                </h5>
+                            </div>
+
+                            <div class="location-wrap mx-auto py-3 py-lg-0">
+                                <h5 class="text-white">
+                                   
+                               
+                                </h5>
+                            </div>
+
+                            <div class="social-share">
+                                <ul class="social-icon d-flex align-items-center justify-content-center">
+                                    <span class="text-white me-3">Share:</span>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link">
+                                            <span class="bi-facebook"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link">
+                                            <span class="bi-twitter"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link">
+                                            <span class="bi-instagram"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-wrap">
+                    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                        <source src="video/pexels-2022395.mp4" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+
+            <section class="about-section section-padding" id="section_2">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                            <div class="services-info">
+                                <h2 class="text-white mb-4">BRAC University Cultural Club</h2>
+
+                                <p class="text-white"><strong>Publish Date:</strong> March 19th, 2016</p>
+
+                                <p class="text-white">BRAC University Cultural Club organized an event to welcome new members who have signed up for the club on 18 March 2016. The program started with the introduction of the existing club members. Video presentations were shown to give the students a brief synopsis about the activities of the Club. Students were also introduced with the Assistant Executive Panel. The event covered few dance performances, songs, and fun sessions.</p>
+
+                                <h6 class="text-warning mt-4">Talent Showcase</h6>
+
+                                <p class="text-white">Afterward, the new members were asked to come up on the stage and introduce themselves and show what they were capable of. This is where all the fun began. All the performers came on stage and gave their best shot trying to impress the judges with their unique skills set. Some baffled the judges with their voice and some blew the judges with amazement with their dance skills.</p>
+
+                                <h6 class="text-warning mt-4">Recruitment of New Faces</h6>
+
+                                <p class="text-white">At the end of the event, the club found some brilliant faces to recruit for the next generation of BRAC University Cultural Club.</p>
+
+                                <h6 class="text-warning mt-4">Future Plans</h6>
+
+                                <p class="text-white">The club aims to organize more interactive and engaging events in the future, including cultural festivals, talent hunts, and workshops to nurture the creativity of its members. Stay tuned for more updates!</p>
+
+                                <div class="mt-4">
+                                    <a href="#section_6" class="btn btn-outline-light">Contact Us</a>
+                                    <a href="#section_4" class="btn btn-warning ms-2">View Schedule</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="about-text-wrap">
+                                <img src="images/2nd.JPG" class="about-image img-fluid">
+
+                                <div class="about-text-info d-flex">
+                                    <div class="d-flex">
+                                        <i class="about-text-icon bi-person"></i>
+                                    </div>
+
+
+                                    <div class="ms-4">
+                                        <h3>A Happy Moment</h3>
+
+                                        <p class="mb-0">Our Amazing Festival Experience with BRACU</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="artists-section section-padding" id="section_3">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <div class="col-12 text-center">
+                            <h2 class="mb-4">Meet Panel Members</h2>
+                        </div>
+<!-- 1 -->
+                        <div class="col-lg-5 col-12 mb-4">
+                            <div class="artists-thumb">
+                                <div class="artists-image-wrap">
+                                    <img src="images/artists/aparup.jpg" class="artists-image img-fluid">
+                                </div>
+
+                                <div class="artists-hover">
+                        <p>
+                            <strong>Name:</strong>
+                            Aparup Chowdhury
+                        </p>
+
+                        <p>
+                            <strong>Position:</strong>
+                            President
+                        </p>
+
+                        <hr>
+
+                        <p class="mb-0">
+                            <strong>Facebook:</strong>
+                            <a href="https://www.facebook.com/aparup.chy.77">Aparup Chowdhury</a>
+                        </p>
+                                </div>
+                            </div>
+                        </div>
+<!-- done -->
+<!-- 2 -->
+                        <div class="col-lg-5 col-12 mb-4">
+                            <div class="artists-thumb">
+                                <div class="artists-image-wrap">
+                                    <img src="images/artists/nafisa.jpg" class="artists-image img-fluid">
+                                </div>
+
+                                <div class="artists-hover">
+                        <p>
+                            <strong>Name:</strong>
+                            Nafisa Noor
+                        </p>
+
+                        <p>
+                            <strong>Position:</strong>
+                            General Secretary
+                        </p>
+
+                        <hr>
+
+                        <p class="mb-0">
+                            <strong>Facebook:</strong>
+                            <a href="https://www.facebook.com/nafisa.noor.57685">Nafisa Noor</a>
+                        </p>
+                                </div>
+                            </div>
+                        </div>
+<!-- done -->
+<!-- 3 -->
+                        <div class="col-lg-5 col-12 mb-4">
+                            <div class="artists-thumb">
+                                <div class="artists-image-wrap">
+                                    <img src="images/artists/zia.jpg" class="artists-image img-fluid">
+                                </div>
+
+                                <div class="artists-hover">
+                        <p>
+                            <strong>Name:</strong>
+                            Towkeer Mohammad Zia
+                        </p>
+
+                        <p>
+                            <strong>Position:</strong>
+                            Joint Secretary
+                        </p>
+
+                        <hr>
+
+                        <p class="mb-0">
+                            <strong>Facebook:</strong>
+                            <a href="https://www.facebook.com/towkeer.mohammad.zia.2024">Towkeer Mohammad Zia</a>
+                        </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-12 mb-4" style="margin-top: -174px;">
+                            <div class="artists-thumb">
+                                <div class="artists-image-wrap">
+                                    <img src="images/artists/mamun.jpg" class="artists-image img-fluid" style="max-width: 600px; height: 700px;">
+                                </div>
+
+                                <div class="artists-hover">
+                        <p>
+                            <strong>Name:</strong>
+                            Mamun Abdullah
+                        </p>
+
+                        <p>
+                            <strong>Position:</strong>
+                            Vice President
+                        </p>
+
+
+                        <hr>
+
+                        <p class="mb-0">
+                            <strong>Facebook:</strong>
+                            <a href="https://www.facebook.com/aam099">Mamun Abdullah</a>
+                        </p>
+                    </div>
+                </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+<!-- done -->
+
+            <!-- SB Members Section -->
+            <section class="sb-section" id="section_4">
+                <div class="container">
+                    <h2 class="sb-section-title">Meet Our SB Members</h2>
+                    
+                    <div class="album-cover">
+                        <div class="swiper sb-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/Mahamudul_Hossain_Jisun.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/foggy.winter.007" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Mahamudul Hossain Jisun</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Nilonjana_Mojumder.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/arushi.lien" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Nilonjana Mojumder</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Showmik_Safi.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/profile.php?id=100067106982577" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Showmik Safi</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/rudian.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/rudian.borneel" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Rudian Borneel</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/MD_Sadman_Safin_Oasif.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/profile.php?id=100008597416622" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">MD Sadman Safin Oasif</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Tamejul_habib.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/INCcharlie19" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Tamejul Habib</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Nafisa_Islam.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/nafisaislamahona" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Nafisa Islam</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Shreya_Sangbriti.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://web.facebook.com/shreyasangbriti#" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Shreya Sangbriti</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Avibadhan_Das.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/avibadhan.dasarno" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Avibadhan Das</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Lalon.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/andalib.mostafa.1" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Lalon Mostafa</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Rudra_Mathew_Gomes.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/henry.ribeiro.33" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Rudra Mathew Gomes</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Syed_Ariful_Islam_Aowan.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/syedariful.aowan" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Syed Ariful Islam Aowan</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Rubaba_Khijir_Nusheen.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/rubaba.nusheen" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Rubaba Khijir Nusheen</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Maria_Kamal_Katha.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/maria.kamal.katha" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Maria Kamal Katha</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Diana_Halder_Momo.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/diana.momo.334" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Diana Halder Momo</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Jubair_Rahman.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/jubair.rahman.765511" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Jubair Rahman</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Fabiha_Bushra_Ali.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/fabooshu" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Fabiha Bushra Ali</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Md_Ahnaf_Farhan.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/ahnaf.farhan.1" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Md Ahnaf Farhan</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Khaled_Bin_Taher.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/Khaled.tahsin18" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Khaled Bin Taher</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Lawrence_Clifford_Gomes.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/Lcgomeslloyd" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Lawrence Clifford Gomes</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Jareen_Tasnim_Bushra.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/buushraaaaaa21" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">Jareen Tasnim Bushra</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="schedule-section section-padding" id="section_5">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 text-center">
+                            <h2 class="text-white mb-4">Event Schedule</h1>
+
+                            <div class="table-responsive">
+                                <table class="schedule-table table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+
+                                            <th scope="col">Wednesday</th>
+
+                                            <th scope="col">Thursday</th>
+
+                                            <th scope="col">Friday</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Day 1</th>
+
+                                            <td class="table-background-image-wrap pop-background-image">
+                                                <h3>Pop Night</h3>
+
+                                                <p class="mb-2">5:00 - 7:00 PM</p>
+
+                                                <p>By Adele</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #F3DCD4"></td>
+
+                                            <td class="table-background-image-wrap rock-background-image">
+                                                <h3>Rock & Roll</h3>
+
+                                                <p class="mb-2">7:00 - 11:00 PM</p>
+
+                                                <p>By Rihana</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 2</th>
+                
+                                            <td style="background-color: #ECC9C7"></td>
+
+                                            <td>
+                                                <h3>DJ Night</h3>
+
+                                                <p class="mb-2">6:30 - 9:30 PM</p>
+
+                                                <p>By Rihana</p>
+                                            </td>
+
+                                            <td style="background-color: #D9E3DA"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 3</th>
+                
+                                            <td class="table-background-image-wrap country-background-image">
+                                                <h3>Country Music</h3>
+
+                                                <p class="mb-2">4:30 - 7:30 PM</p>
+
+                                                <p>By Rihana</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #D1CFC0"></td>
+
+                                            <td>
+                                                <h3>Free Styles</h3>
+
+                                                <p class="mb-2">6:00 - 10:00 PM</p>
+
+                                                <p>By Members</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section section-padding" id="section_6">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <h2 class="text-center mb-4">Interested? Let's talk</h2>
+
+                            <nav class="d-flex justify-content-center">
+                                <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactForm" type="button" role="tab" aria-controls="nav-ContactForm" aria-selected="false">
+                                        <h5>Contact Form</h5>
+                                    </button>
+
+                                    <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactMap" type="button" role="tab" aria-controls="nav-ContactMap" aria-selected="false">
+                                        <h5>Google Maps</h5>
+                                    </button>
+                                </div>
+                            </nav>
+
+                            <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
+                                    <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form">
+                                        <div class="contact-form-body">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-12">
+                                                    <input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Full name" required>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-12">
+                                                    <input type="email" name="contact-email" id="contact-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
+                                                </div>
+                                            </div>
+
+                                            <input type="text" name="contact-company" id="contact-company" class="form-control" placeholder="Company" required>
+
+                                            <textarea name="contact-message" rows="3" class="form-control" id="contact-message" placeholder="Message"></textarea>
+
+                                            <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                                <button type="submit" class="form-control">Send message</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel" aria-labelledby="nav-ContactMap-tab">
+                                    <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1100.1434944730236!2d90.42450743390042!3d23.77246450986446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7715a40c603%3A0xec01cd75f33139f5!2sBRAC%20University!5e1!3m2!1sen!2sbd!4v1745998853929!5m2!1sen!2sbd"  width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="site-footer-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="text-white mb-lg-0">BUCuC</h2>
+                        </div>
+
+                        <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                            <ul class="social-icon d-flex justify-content-lg-end">
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-twitter"></span>
+                                    </a>
+                                </li>
+    
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-apple"></span>
+                                    </a>
+                                </li>
+    
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-instagram"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-youtube"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-pinterest"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-4 pb-2">
+                        <h5 class="site-footer-title mb-3">Links</h5>
+
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Home</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">About</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">BUCuC Panel </a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Schedule</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Sb Members</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                        <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                        <p class="text-white d-flex mb-1">
+                            <a href="tel:+880 1601-946311 " class="site-footer-link">
+                                +880 1601-946311
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <a href="mailto:hello@company.com" class="site-footer-link">
+                                club.bucuc@g.bracu.ac.bd <br>hr.bucuc@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                        <h5 class="site-footer-title mb-3">Location</h5>
+
+                        <p class="text-white d-flex mt-3 mb-2">
+                            Kha 224 Pragati Sarani, Merul Badda , Dhaka 1212</p>
+
+                        <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                            <span>Our Maps</span>
+                            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-12 mt-5">
+                            <p class="copyright-text">Copyright © 2036 BUCuC Company</p>
+                        </div>
+
+                        <div class="col-lg-8 col-12 mt-lg-5">
+                            <ul class="site-footer-links">
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                                </li>
+
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">Privacy Policy</a>
+                                </li>
+
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">Your Feedback</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+        
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            const swiper = new Swiper('.sb-swiper', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+            });
+        </script>
+    </body>
+</html>
