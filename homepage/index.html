@@ -41,8 +41,8 @@
                 padding: 80px 0;
                 background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/8727c9b1-be21-4932-a221-4257b59a74dd);
                 background-repeat: no-repeat;
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(30%);
+                -webkit-backdrop-filter: blur(30%);
                 animation: slidein 120s forwards infinite alternate;
             }
 
@@ -57,8 +57,26 @@
                 }
             }
 
+            .sb-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                z-index: 1;
+            }
+
+            .sb-section .container {
+                position: relative;
+                z-index: 2;
+            }
+
             .album-cover {
-                width: 80%;
+                width: 90%;
                 margin: 0 auto;
             }
 
@@ -118,20 +136,37 @@
 
             .member-name {
                 position: absolute;
-                bottom: -40px;
+                bottom: -60px;
                 left: 0;
                 right: 0;
                 text-align: center;
                 color: white;
                 font-size: 1.1rem;
                 font-weight: 500;
-                padding: 10px;
+                padding: 5px;
                 background: rgba(0, 0, 0, 0.7);
                 border-radius: 0 0 10px 10px;
                 transition: all 0.3s ease;
+                opacity: 0;
+                transform: translateY(20px);
             }
 
-            .sb-swiper .swiper-slide:hover .member-name {
+            .member-name .name {
+                display: block;
+                font-size: 1rem;
+                margin-bottom: 1px;
+            }
+
+            .member-name .position {
+                display: block;
+                font-size: 0.8rem;
+                color: #ffd700;
+                font-weight: 400;
+            }
+
+            .sb-swiper .swiper-slide-active .member-name {
+                opacity: 1;
+                transform: translateY(0);
                 bottom: 0;
             }
 
@@ -141,6 +176,21 @@
                 margin-bottom: 40px;
                 font-size: 2.5rem;
                 font-weight: 600;
+            }
+
+            .album-img-reflect .main-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px 10px 0 0;
+                display: block;
+            }
+            .album-img-reflect .reflection {
+                width: 100%;
+                height: 40px;
+                overflow: hidden;
+                position: relative;
+                display: block;
             }
         </style>
         
@@ -200,11 +250,11 @@ https://templatemo.com/tm-583-festava-live
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_4">Schedule</a>
+                                <a class="nav-link click-scroll" href="#section_4">Sb Members</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_5">Sb Members</a>
+                                <a class="nav-link click-scroll" href="#section_5">Schedule</a>
                             </li>
     
                             <li class="nav-item">
@@ -460,7 +510,274 @@ https://templatemo.com/tm-583-festava-live
             </section>
 <!-- done -->
 
-            <section class="schedule-section section-padding" id="section_4">
+            <!-- SB Members Section -->
+            <section class="sb-section" id="section_4">
+                <div class="container">
+                    <h2 class="sb-section-title">Meet Our SB Members</h2>
+                    
+                    <div class="album-cover">
+                        <div class="swiper sb-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/rudian.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/rudian.borneel" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Rudian Borneel</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/MD_Sadman_Safin_Oasif.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/profile.php?id=100008597416622" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">MD Sadman Safin Oasif</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Mahamudul_Hossain_Jisun.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/foggy.winter.007" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Mahamudul Hossain Jisun</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Nilonjana_Mojumder.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/arushi.lien" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Nilonjana Mojumder</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Showmik_Safi.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/profile.php?id=100067106982577" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Showmik Safi</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide">
+                                    <img src="images/Tamejul_habib.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/INCcharlie19" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Tamejul Habib</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Nafisa_Islam.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/nafisaislamahona" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Nafisa Islam</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Shreya_Sangbriti.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://web.facebook.com/shreyasangbriti#" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Shreya Sangbriti</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Avibadhan_Das.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/avibadhan.dasarno" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Avibadhan Das</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Lalon.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/andalib.mostafa.1" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Lalon Mostafa</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Rudra_Mathew_Gomes.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/henry.ribeiro.33" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Rudra Mathew Gomes</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Syed_Ariful_Islam_Aowan.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/syedariful.aowan" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Syed Ariful Islam Aowan</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Rubaba_Khijir_Nusheen.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/rubaba.nusheen" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Rubaba Khijir Nusheen</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Maria_Kamal_Katha.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/maria.kamal.katha" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Maria Kamal Katha</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Diana_Halder_Momo.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/diana.momo.334" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Diana Halder Momo</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Jubair_Rahman.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/jubair.rahman.765511" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Jubair Rahman</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Fabiha_Bushra_Ali.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/fabooshu" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Fabiha Bushra Ali</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Md_Ahnaf_Farhan.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/ahnaf.farhan.1" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Md Ahnaf Farhan</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Khaled_Bin_Taher.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/Khaled.tahsin18" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Khaled Bin Taher</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Lawrence_Clifford_Gomes.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/Lcgomeslloyd" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Lawrence Clifford Gomes</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/Jareen_Tasnim_Bushra.jpg" />
+                                    <div class="overlay">
+                                        <a href="https://www.facebook.com/buushraaaaaa21" target="_blank">
+                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
+                                        </a>
+                                    </div>
+                                    <div class="member-name">
+                                        <span class="name">Jareen Tasnim Bushra</span>
+                                        <span class="position">Executive Member</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="schedule-section section-padding" id="section_5">
                 <div class="container">
                     <div class="row">
 
@@ -550,209 +867,6 @@ https://templatemo.com/tm-583-festava-live
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SB Members Section -->
-            <section class="sb-section" id="section_5">
-                <div class="container">
-                    <h2 class="sb-section-title">Meet Our SB Members</h2>
-                    
-                    <div class="album-cover">
-                        <div class="swiper sb-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="images/Mahamudul_Hossain_Jisun.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/foggy.winter.007" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Mahamudul Hossain Jisun</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Nilonjana_Mojumder.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/arushi.lien" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Nilonjana Mojumder</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Showmik_Safi.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/profile.php?id=100067106982577" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Showmik Safi</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/rudian.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/rudian.borneel" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Rudian Borneel</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/MD_Sadman_Safin_Oasif.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/profile.php?id=100008597416622" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">MD Sadman Safin Oasif</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Tamejul_habib.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/INCcharlie19" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Tamejul Habib</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Nafisa_Islam.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/nafisaislamahona" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Nafisa Islam</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Shreya_Sangbriti.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://web.facebook.com/shreyasangbriti#" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Shreya Sangbriti</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Avibadhan_Das.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/avibadhan.dasarno" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Avibadhan Das</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Lalon.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/andalib.mostafa.1" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Lalon Mostafa</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Rudra_Mathew_Gomes.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/henry.ribeiro.33" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Rudra Mathew Gomes</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Syed_Ariful_Islam_Aowan.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/syedariful.aowan" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Syed Ariful Islam Aowan</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Rubaba_Khijir_Nusheen.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/rubaba.nusheen" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Rubaba Khijir Nusheen</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Maria_Kamal_Katha.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/maria.kamal.katha" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Maria Kamal Katha</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Diana_Halder_Momo.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/diana.momo.334" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Diana Halder Momo</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Jubair_Rahman.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/jubair.rahman.765511" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Jubair Rahman</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Fabiha_Bushra_Ali.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/fabooshu" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Fabiha Bushra Ali</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Md_Ahnaf_Farhan.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/ahnaf.farhan.1" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Md Ahnaf Farhan</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Khaled_Bin_Taher.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/Khaled.tahsin18" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Khaled Bin Taher</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Lawrence_Clifford_Gomes.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/Lcgomeslloyd" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Lawrence Clifford Gomes</div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/Jareen_Tasnim_Bushra.jpg" />
-                                    <div class="overlay">
-                                        <a href="https://www.facebook.com/buushraaaaaa21" target="_blank">
-                                            <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
-                                        </a>
-                                    </div>
-                                    <div class="member-name">Jareen Tasnim Bushra</div>
-                                </div>
                             </div>
                         </div>
                     </div>
