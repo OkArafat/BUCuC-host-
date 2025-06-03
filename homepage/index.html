@@ -467,7 +467,35 @@
                 }
             }
         </style>
-        
+        <style>
+        /* --- Responsive Fixes for Panel Section and Google Map --- */
+        @media (max-width: 768px) {
+          /* Fix panel section overlap */
+          .artists-section .row > [class^="col-"] {
+            margin-top: 0 !important;
+          }
+          .artists-thumb {
+            margin-bottom: 32px;
+          }
+          .artists-thumb .artists-image-wrap img {
+            height: auto !important;
+            max-height: 340px;
+            object-fit: cover;
+          }
+          /* Remove negative margin on mobile */
+          .artists-section [style*="margin-top: -"] {
+            margin-top: 0 !important;
+          }
+          /* Google Map responsive */
+          .google-map {
+            width: 100% !important;
+            min-width: 0 !important;
+            height: 220px !important;
+            border-radius: 12px !important;
+            margin-bottom: 16px;
+          }
+        }
+        </style>
 <!--
 
 TemplateMo 583 BUCuC
@@ -478,7 +506,37 @@ https://templatemo.com/tm-583-festava-live
     </head>
     
     <body>
- 
+        <!-- Mobile Sidebar Navigation (only visible on mobile) -->
+        <div id="mobileSidebarOverlay" class="mobile-sidebar-overlay"></div>
+        <nav id="mobileSidebar" class="mobile-sidebar">
+            <div class="sidebar-profile">
+                <img src="images/profile-placeholder.png" alt="Profile" class="sidebar-profile-img">
+                <div class="sidebar-profile-info">
+                    <strong>BRACU Cultural Club</strong>
+                    <span>Official</span>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#profile"><i class="fa fa-user"></i> Profile</a></li>
+                <li><a href="#messages"><i class="fa fa-envelope"></i> Messages</a></li>
+                <li><a href="#activity"><i class="fa fa-chart-line"></i> Activity</a></li>
+                <li><a href="#events"><i class="fa fa-calendar"></i> Events</a></li>
+                <li><a href="#reports"><i class="fa fa-file-alt"></i> Reports</a></li>
+                <li><a href="#statistics"><i class="fa fa-chart-bar"></i> Statistics</a></li>
+                <li><a href="#signout"><i class="fa fa-sign-out-alt"></i> Sign Out</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#friend"><i class="fa fa-share-alt"></i> Tell a Friend</a>
+                <a href="#help"><i class="fa fa-question-circle"></i> Help & Feedback</a>
+            </div>
+        </nav>
+        <button id="sidebarToggle" class="sidebar-toggle-btn" aria-label="Open navigation menu">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
+        <!-- End Mobile Sidebar Navigation -->
+
         <main>
 
             <header class="site-header" id="mainHeader">
@@ -1657,5 +1715,65 @@ https://templatemo.com/tm-583-festava-live
             });
         });
         </script>
+        <script>
+        // Mobile Sidebar Toggle Script (right sidebar, close button)
+        (function() {
+          var sidebar = document.getElementById('mobileSidebar');
+          var overlay = document.getElementById('mobileSidebarOverlay');
+          var toggleBtn = document.getElementById('sidebarToggle');
+          function toggleSidebar() {
+            var isOpen = sidebar.classList.toggle('open');
+            overlay.classList.toggle('open', isOpen);
+            toggleBtn.classList.toggle('open', isOpen);
+          }
+          if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
+          if (overlay) overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            toggleBtn.classList.remove('open');
+          });
+        })();
+        </script>
+        <style>
+        @media (max-width: 768px) {
+          .sidebar-toggle-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            background: #f8f8fc;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            z-index: 1200;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+          }
+          .sidebar-toggle-bar {
+            width: 18px;
+            height: 2px;
+            background: #888;
+            margin: 3px 0;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(.4,2,.6,1);
+            position: relative;
+            display: block;
+          }
+          .sidebar-toggle-btn.open .sidebar-toggle-bar:nth-child(1) {
+            transform: translateY(5px) rotate(45deg);
+          }
+          .sidebar-toggle-btn.open .sidebar-toggle-bar:nth-child(2) {
+            opacity: 0;
+          }
+          .sidebar-toggle-btn.open .sidebar-toggle-bar:nth-child(3) {
+            transform: translateY(-5px) rotate(-45deg);
+          }
+        }
+        </style>
     </body>
 </html>

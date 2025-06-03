@@ -1020,3 +1020,177 @@ strong {
   }
 }
 
+/* === Mobile Sidebar Navigation Styles (Right Side, Clean) === */
+@media (max-width: 768px) {
+  .mobile-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1040;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+  .mobile-sidebar-overlay.open {
+    display: block;
+    opacity: 1;
+  }
+  .mobile-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; right: 0;
+    left: auto;
+    width: 80vw;
+    max-width: 320px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+    z-index: 1050;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    padding: 24px 0 0 0;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+  }
+  .mobile-sidebar.open {
+    transform: translateX(0);
+  }
+  .sidebar-close-btn { display: none !important; }
+  .sidebar-toggle-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    background: #f8f8fc;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    z-index: 1200;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .sidebar-toggle-btn.open {
+    background: #f3f1fa;
+    box-shadow: 0 4px 16px rgba(124,51,237,0.08);
+  }
+  .sidebar-toggle-bar {
+    width: 18px;
+    height: 2px;
+    background: #888;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    position: relative;
+    display: block;
+  }
+  .sidebar-toggle-btn.open .sidebar-toggle-bar:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+  .sidebar-toggle-btn.open .sidebar-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .sidebar-toggle-btn.open .sidebar-toggle-bar:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  .sidebar-profile {
+    display: flex;
+    align-items: center;
+    padding: 0 24px 24px 24px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 12px;
+    margin-top: 32px;
+  }
+  .sidebar-profile-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+    background: #f0f0f0;
+    border: 2px solid #eaeaea;
+  }
+  .sidebar-profile-info strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #222;
+    margin-bottom: 2px;
+  }
+  .sidebar-profile-info span {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  .sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-nav li {
+    border-bottom: 1px solid #f3f3f3;
+  }
+  .sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 14px 28px;
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 0 18px 18px 0;
+    margin-right: 8px;
+  }
+  .sidebar-nav a i {
+    margin-right: 14px;
+    font-size: 1.2em;
+    color: #a78bfa;
+  }
+  .sidebar-nav a:hover, .sidebar-nav a:focus {
+    background: #f6f5ff;
+    color: #7c3aed;
+  }
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 18px 28px 24px 28px;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fafaff;
+    border-bottom-left-radius: 18px;
+  }
+  .sidebar-footer a {
+    color: #888;
+    font-size: 0.98rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 0 12px 12px 0;
+    padding: 8px 0 8px 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .sidebar-footer a i {
+    margin-right: 10px;
+    font-size: 1.1em;
+  }
+  .sidebar-footer a:hover {
+    background: #f6f5ff;
+    color: #7c3aed;
+  }
+  /* Hide main nav on mobile if needed */
+  .navbar, .site-header, .site-nav {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-sidebar, .mobile-sidebar-overlay, .sidebar-toggle-btn {
+    display: none !important;
+  }
+}
+/* === End Mobile Sidebar Navigation Styles (Right Side, Clean) === */
+
