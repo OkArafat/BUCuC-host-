@@ -76,12 +76,15 @@
             }
 
             .album-cover {
-                width: 90%;
-                margin: 0 auto;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
             }
 
             .sb-swiper {
                 width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
                 padding: 40px 0 100px;
             }
 
@@ -96,6 +99,8 @@
                 background: #fff;
                 box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
                 transition: 0.3s;
+                min-width: 120px;
+                min-height: 120px;
             }
 
             .sb-swiper .swiper-slide img {
@@ -337,6 +342,129 @@
 
             .form-label + .form-check-inline {
                 margin-left: 1.2em;
+            }
+
+            @media (max-width: 768px) {
+                .container {
+                    width: 100%;
+                    padding: 0 15px;
+                }
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .event-schedule-container {
+                max-width: 1150px;
+                margin: 40px auto;
+                padding: 32px 16px;
+                border-radius: 24px;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.333) 60%, rgba(255, 200, 2, 0.576) 100%);
+                backdrop-filter: blur(8px);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.543);
+            }
+
+            .event-schedule-header {
+                text-align: center;
+                font-size: 2.8rem;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 32px;
+                background: linear-gradient(90deg, #d94c00, #ffc802, #e76f2c);
+                background-size: 200% 100%;
+                animation: headerGradient 4s linear infinite;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            @keyframes headerGradient {
+                0% { background-position: 0% 50%; }
+                100% { background-position: 100% 50%; }
+            }
+
+            .event-cards-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 28px;
+            }
+
+            .event-card {
+                position: relative;
+                border-radius: 18px;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.08);
+                box-shadow: 0 4px 24px 0 rgb(31, 38, 135);
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+                min-height: 320px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+
+            .event-card:hover {
+                transform: scale(1.04) translateY(-8px);
+                box-shadow: 0 8px 32px 0 #f3d35c88, 0 0 0 4px #e76f2c55;
+            }
+
+            .event-card-bg {
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background-size: cover;
+                background-position: center;
+                filter: blur(1px) brightness(0.7);
+                z-index: 1;
+                transition: filter 0.3s;
+            }
+
+            .event-card:hover .event-card-bg {
+                filter: blur(0) brightness(0.85);
+            }
+
+            .event-card-content {
+                position: relative;
+                z-index: 2;
+                padding: 32px 20px 20px 20px;
+                color: #fff;
+                text-align: left;
+                background: linear-gradient(0deg, rgba(30,30,40,0.85) 70%, rgba(30,30,40,0.1) 100%);
+                border-radius: 0 0 18px 18px;
+            }
+
+            .event-icon {
+                font-size: 2.2rem;
+                color: #ffd700;
+                margin-bottom: 0.5rem;
+                display: inline-block;
+            }
+
+            .event-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 0.3rem;
+            }
+
+            .event-time {
+                font-size: 1.1rem;
+                margin-bottom: 0.2rem;
+                color: #f3d35c;
+            }
+
+            .event-by {
+                font-size: 1rem;
+                color: #ffd700;
+                margin-bottom: 0.2rem;
+            }
+
+            @media (max-width: 600px) {
+                .event-schedule-header {
+                    font-size: 2rem;
+                }
+                .event-card-content {
+                    padding: 20px 10px 10px 10px;
+                }
             }
         </style>
         
@@ -752,7 +880,7 @@ https://templatemo.com/tm-583-festava-live
                         <div class="swiper sb-swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="images/rudian.jpg" />
+                                    <img src="images/rudian.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/rudian.borneel" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -764,7 +892,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/MD_Sadman_Safin_Oasif.jpg" />
+                                    <img src="images/MD_Sadman_Safin_Oasif.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/profile.php?id=100008597416622" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -776,7 +904,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Mahamudul_Hossain_Jisun.jpg" />
+                                    <img src="images/Mahamudul_Hossain_Jisun.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/foggy.winter.007" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -788,7 +916,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Nilonjana_Mojumder.jpg" />
+                                    <img src="images/Nilonjana_Mojumder.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/arushi.lien" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -800,7 +928,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Showmik_Safi.jpg" />
+                                    <img src="images/Showmik_Safi.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/profile.php?id=100067106982577" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -813,7 +941,7 @@ https://templatemo.com/tm-583-festava-live
                                 </div>
                                 
                                 <div class="swiper-slide">
-                                    <img src="images/Tamejul_habib.jpg" />
+                                    <img src="images/Tamejul_habib.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/INCcharlie19" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -825,7 +953,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Nafisa_Islam.jpg" />
+                                    <img src="images/Nafisa_Islam.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/nafisaislamahona" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -837,7 +965,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Shreya_Sangbriti.jpg" />
+                                    <img src="images/Shreya_Sangbriti.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://web.facebook.com/shreyasangbriti#" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -849,7 +977,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Avibadhan_Das.jpg" />
+                                    <img src="images/Avibadhan_Das.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/avibadhan.dasarno" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -861,7 +989,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Lalon.jpg" />
+                                    <img src="images/Lalon.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/andalib.mostafa.1" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -873,7 +1001,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Rudra_Mathew_Gomes.jpg" />
+                                    <img src="images/Rudra_Mathew_Gomes.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/henry.ribeiro.33" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -885,7 +1013,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Syed_Ariful_Islam_Aowan.jpg" />
+                                    <img src="images/Syed_Ariful_Islam_Aowan.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/syedariful.aowan" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -897,7 +1025,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Rubaba_Khijir_Nusheen.jpg" />
+                                    <img src="images/Rubaba_Khijir_Nusheen.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/rubaba.nusheen" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -909,7 +1037,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Maria_Kamal_Katha.jpg" />
+                                    <img src="images/Maria_Kamal_Katha.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/maria.kamal.katha" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -921,7 +1049,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Diana_Halder_Momo.jpg" />
+                                    <img src="images/Diana_Halder_Momo.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/diana.momo.334" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -933,7 +1061,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Jubair_Rahman.jpg" />
+                                    <img src="images/Jubair_Rahman.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/jubair.rahman.765511" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -945,7 +1073,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Fabiha_Bushra_Ali.jpg" />
+                                    <img src="images/Fabiha_Bushra_Ali.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/fabooshu" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -957,7 +1085,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Md_Ahnaf_Farhan.jpg" />
+                                    <img src="images/Md_Ahnaf_Farhan.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/ahnaf.farhan.1" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -969,7 +1097,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Khaled_Bin_Taher.jpg" />
+                                    <img src="images/Khaled_Bin_Taher.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/Khaled.tahsin18" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -981,7 +1109,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Lawrence_Clifford_Gomes.jpg" />
+                                    <img src="images/Lawrence_Clifford_Gomes.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/Lcgomeslloyd" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -993,7 +1121,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Jareen_Tasnim_Bushra.jpg" />
+                                    <img src="images/Jareen_Tasnim_Bushra.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/buushraaaaaa21" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -1005,7 +1133,7 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/Tasnimul_Hasan.jpg" />
+                                    <img src="images/Tasnimul_Hasan.jpg" onerror="this.src='images/placeholder.png'" />
                                     <div class="overlay">
                                         <a href="https://www.facebook.com/buushraaaaaa21" target="_blank">
                                             <ion-icon name="logo-facebook" style="color: #1877f2"></ion-icon>
@@ -1027,91 +1155,62 @@ https://templatemo.com/tm-583-festava-live
                     <div class="row">
 
                         <div class="col-12 text-center">
-                            <h2 class="text-white mb-4">Event Schedule</h1>
+                            
 
-                            <div class="table-responsive">
-                                <table class="schedule-table table table-dark">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Date</th>
-
-                                            <th scope="col">Wednesday</th>
-
-                                            <th scope="col">Thursday</th>
-
-                                            <th scope="col">Friday</th>
-
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Day 1</th>
-
-                                            <td class="table-background-image-wrap pop-background-image">
-                                                <h3>Pop Night</h3>
-
-                                                <p class="mb-2">5:00 - 7:00 PM</p>
-
-                                                <p>By Adele</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-
-                                            <td style="background-color: #F3DCD4"></td>
-
-                                            <td class="table-background-image-wrap rock-background-image">
-                                                <h3>Rock & Roll</h3>
-
-                                                <p class="mb-2">7:00 - 11:00 PM</p>
-
-                                                <p>By Rihana</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">Day 2</th>
-                
-                                            <td style="background-color: #ECC9C7"></td>
-
-                                            <td>
-                                                <h3>DJ Night</h3>
-
-                                                <p class="mb-2">6:30 - 9:30 PM</p>
-
-                                                <p>By Rihana</p>
-                                            </td>
-
-                                            <td style="background-color: #D9E3DA"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">Day 3</th>
-                
-                                            <td class="table-background-image-wrap country-background-image">
-                                                <h3>Country Music</h3>
-
-                                                <p class="mb-2">4:30 - 7:30 PM</p>
-
-                                                <p>By Rihana</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-
-                                            <td style="background-color: #D1CFC0"></td>
-
-                                            <td>
-                                                <h3>Free Styles</h3>
-
-                                                <p class="mb-2">6:00 - 10:00 PM</p>
-
-                                                <p>By Members</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="event-schedule-container">
+                                <div class="event-schedule-header">Event Schedule</div>
+                                <div class="event-cards-grid">
+                                    <!-- Card 1 -->
+                                    <div class="event-card">
+                                        <div class="event-card-bg" style="background-image: url('images/slide2.jpg');"></div>
+                                        <div class="event-card-content">
+                                            <span class="event-icon"><i class="fa-solid fa-music"></i></span>
+                                            <div class="event-title">Pop Night</div>
+                                            <div class="event-time">Wed, 5:00 - 7:00 PM</div>
+                                            <div class="event-by">By Adele</div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 -->
+                                    <div class="event-card">
+                                        <div class="event-card-bg" style="background-image: url('images/slide3.jpg');"></div>
+                                        <div class="event-card-content">
+                                            <span class="event-icon"><i class="fa-solid fa-guitar"></i></span>
+                                            <div class="event-title">Rock & Roll</div>
+                                            <div class="event-time">Fri, 7:00 - 11:00 PM</div>
+                                            <div class="event-by">By Rihana</div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 3 -->
+                                    <div class="event-card">
+                                        <div class="event-card-bg" style="background-image: url('images/slide4.jpg');"></div>
+                                        <div class="event-card-content">
+                                            <span class="event-icon"><i class="fa-solid fa-headphones"></i></span>
+                                            <div class="event-title">DJ Night</div>
+                                            <div class="event-time">Thu, 6:30 - 9:30 PM</div>
+                                            <div class="event-by">By Rihana</div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 4 -->
+                                    <div class="event-card">
+                                        <div class="event-card-bg" style="background-image: url('images/slide5.jpg');"></div>
+                                        <div class="event-card-content">
+                                            <span class="event-icon"><i class="fa-solid fa-microphone"></i></span>
+                                            <div class="event-title">Country Music</div>
+                                            <div class="event-time">Sat, 4:30 - 7:30 PM</div>
+                                            <div class="event-by">By Rihana</div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 5 -->
+                                    <div class="event-card">
+                                        <div class="event-card-bg" style="background-image: url('images/slide1.jpg');"></div>
+                                        <div class="event-card-content">
+                                            <span class="event-icon"><i class="fa-solid fa-star"></i></span>
+                                            <div class="event-title">Free Styles</div>
+                                            <div class="event-time">Sat, 6:00 - 10:00 PM</div>
+                                            <div class="event-by">By Members</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1127,8 +1226,11 @@ https://templatemo.com/tm-583-festava-live
 
                             <nav class="d-flex justify-content-center">
                                 <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactForm" type="button" role="tab" aria-controls="nav-ContactForm" aria-selected="false">
+                                    <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactForm" type="button" role="tab" aria-controls="nav-ContactForm" aria-selected="true">
                                         <h5>Sign Up Form</h5>
+                                    </button>
+                                    <button class="nav-link" id="nav-LoginForm-tab" data-bs-toggle="tab" data-bs-target="#nav-LoginForm" type="button" role="tab" aria-controls="nav-LoginForm" aria-selected="false">
+                                        <h5>Login</h5>
                                     </button>
                                     <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactMap" type="button" role="tab" aria-controls="nav-ContactMap" aria-selected="false">
                                         <h5>Google Maps</h5>
@@ -1138,7 +1240,7 @@ https://templatemo.com/tm-583-festava-live
 
                             <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
-                                    <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form" enctype="multipart/form-data">
+                                    <form id="signup-form" class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form" enctype="multipart/form-data">
                                         <div class="contact-form-body">
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-12 mb-3">
@@ -1154,6 +1256,11 @@ https://templatemo.com/tm-583-festava-live
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-12 mb-3">
                                                     <input type="email" name="signup-gsuite-email" id="signup-gsuite-email" class="form-control" placeholder="GSuite Email (if available)">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                                    <input type="password" name="signup-password" id="signup-password" class="form-control" placeholder="Password" required>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -1197,12 +1304,6 @@ https://templatemo.com/tm-583-festava-live
                                                     <input type="url" name="signup-facebook" id="signup-facebook" class="form-control" placeholder="Facebook Profile URL">
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-12 mb-3">
-                                                    <label for="signup-photo" class="form-label">Profile Photo (jpg, png, jpeg):</label>
-                                                    <input type="file" name="signup-photo" id="signup-photo" class="form-control" accept="image/png, image/jpeg, image/jpg">
-                                                </div>
-                                            </div>
                                             <div class="row mt-3">
                                                 <div class="col-12 mb-3">
                                                     <label class="form-label">Membership Status:</label>
@@ -1232,6 +1333,11 @@ https://templatemo.com/tm-583-festava-live
                                             </div>
                                         </div>
                                     </form>
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-LoginForm" role="tabpanel" aria-labelledby="nav-LoginForm-tab">
+                                    <h5>Login Form</h5>
+                                    <!-- Add login form content here -->
                                 </div>
 
                                 <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel" aria-labelledby="nav-ContactMap-tab">
@@ -1318,7 +1424,7 @@ https://templatemo.com/tm-583-festava-live
 
                         <p class="text-white d-flex mb-1">
                             <a href="tel:+8801601946311" class="site-footer-link">
-                                +880 1601-946311
+                                01601946311
                             </a>
                         </p>
 
@@ -1388,9 +1494,8 @@ https://templatemo.com/tm-583-festava-live
                 effect: 'coverflow',
                 grabCursor: true,
                 centeredSlides: true,
-                slidesPerView: 5,
                 loop: true,
-                spaceBetween: 56,
+                initialSlide: 0,
                 coverflowEffect: {
                     rotate: 30,
                     stretch: 0,
@@ -1401,11 +1506,45 @@ https://templatemo.com/tm-583-festava-live
                 pagination: {
                     el: '.swiper-pagination',
                 },
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
+                autoplay: false,
+                // Responsive breakpoints:
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 56,
+                    },
+                }
             });
+
+            let autoplayStarted = false;
+            const sbSection = document.getElementById('section_4');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !autoplayStarted) {
+                        swiper.slideToLoop(0, 0); // Go to Rudian Ahmed (first slide, instantly)
+                        swiper.params.autoplay = {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        };
+                        swiper.autoplay.start();
+                        autoplayStarted = true;
+                    }
+                });
+            }, { threshold: 0.7 });
+
+            observer.observe(sbSection);
         </script>
 
         <script>
@@ -1419,6 +1558,55 @@ https://templatemo.com/tm-583-festava-live
                 header.classList.remove('scrolled');
                 navbar.classList.remove('scrolled');
             }
+        });
+        </script>
+
+        <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+            // Also clear any hash in the URL
+            if (window.location.hash) {
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            }
+        });
+        </script>
+
+        <script>
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const data = {
+                name: document.getElementById('signup-name').value,
+                universityId: document.getElementById('signup-id').value,
+                email: document.getElementById('signup-main-email').value,
+                gsuiteEmail: document.getElementById('signup-gsuite-email').value,
+                department: document.getElementById('signup-department').value,
+                phone: document.getElementById('signup-phone').value,
+                semester: document.getElementById('signup-semester').value,
+                gender: document.getElementById('signup-gender').value,
+                dob: document.getElementById('signup-dob').value,
+                facebook: document.getElementById('signup-facebook').value,
+                status: document.querySelector('input[name="membership-status"]:checked')?.value || '',
+                motivation: document.getElementById('signup-motivation').value,
+                terms: document.getElementById('signup-terms').checked ? 'Agreed' : 'Not Agreed'
+            };
+
+            fetch('https://script.google.com/macros/s/AKfycbxdUsHaXtC8jE6O-4cD4dhQPo7bbrHzsqFe_qeBCo6IXH5S5sKwoWCjkSQH9J94uec/exec', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => res.text())
+            .then(response => {
+                alert('Sign up successful!');
+                document.getElementById('signup-form').reset();
+            })
+            .catch(err => {
+                alert('There was an error. Please try again.');
+            });
         });
         </script>
     </body>
